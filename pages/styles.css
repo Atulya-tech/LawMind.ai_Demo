@@ -79,15 +79,15 @@ body {
 }
 
 .prompt-box {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
+    border-bottom-width: 8px;
+    border-color: rgb(255, 71, 4);
+    border-left-width: 4px;
+    border-right-width: 4px;
     border-style: solid;
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgb(252, 252, 252);
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
@@ -97,8 +97,8 @@ body {
     overflow: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
+    width: 750px;
+    max-width: 1600px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -108,9 +108,12 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(23, 23, 23, 0.926);
     text-decoration: none;
     text-transform: none;
+
+
+    
 }
 
 textarea {
@@ -119,7 +122,7 @@ textarea {
 
 
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color:rgba(68, 255, 16, 0.75)
 }
 
 
@@ -270,6 +273,8 @@ textarea {
 
 .output {
     place-content: center flex-start;
+    font-size: 18px;
+
     align-items: center;
     display: flex;
     flex: 0 0 auto;
@@ -298,7 +303,7 @@ textarea {
 
 .output-header h3 {
     font-family: "Manrope", serif;
-    font-size: 28px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 800;
     letter-spacing: 0px;
@@ -308,12 +313,13 @@ textarea {
     text-decoration: none;
     text-transform: none;
     margin: 0;
+
 }
 
 .output-content {
     outline: none;
     display: flex;
-    /* max-width: 25%; */
+    /*max-width: 25%; */
     flex-direction: column;
     justify-content: flex-start;
     flex-shrink: 0;
@@ -321,9 +327,22 @@ textarea {
 }
 
 .output-content p {
+    /* background-color: antiquewhite;
     text-align: center;
+    
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5); */
+    background-color: white;
+    border: 10px solid;
+    border-image: linear-gradient(to bottom right, #ff6b6b, #fff79e, #a1fdd0, #98a2ff) 1;
+    text-align: left;
+    white-space: pre-line;
+    color: black;
+    padding: 5%;
+    
+
+
+
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
@@ -398,7 +417,7 @@ textarea {
     height: 18px;
     border-radius: 50%;
     display: inline-block;
-    border-top: 2px solid #FFF;
+    border-top: 2px solid #ffffff;
     border-right: 2px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
@@ -413,3 +432,6 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+
+
