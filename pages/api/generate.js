@@ -34,6 +34,20 @@ const generateAction = async (req, res) => {
 export default generateAction;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Steve Jobs - Co-founder of Apple Inc. and widely regarded as a visionary in the technology industry.
 // Bill Gates - Co-founder of Microsoft and one of the most successful entrepreneurs of all time.
 // Elon Musk - CEO of Tesla, SpaceX, and other innovative companies, and known for his ambitious plans to transform the world.
