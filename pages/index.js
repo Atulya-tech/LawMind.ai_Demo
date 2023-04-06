@@ -62,13 +62,12 @@ const Home = () => {
         </div>
         {<div className="prompt-container">
         <textarea
-placeholder="paste content or upload a file (.txt, .docx, .pdf)"
+placeholder="paste content or link to content(Google docs doesn't work :("
 className="prompt-box"
   value={userInput}
   onChange={onUserChangedText}                                   
 />
-<input type="file" onChange={onFileSelected} />
-  <div className="prompt-buttons">
+    <div className="prompt-buttons">
   <a
     className={isGenerating ? 'generate-button loading' : 'generate-button'}
     onClick={callGenerateEndpoint}
