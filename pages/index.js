@@ -8,28 +8,43 @@ const Home = () => {
   const [apiOutput, setApiOutput] = useState('');
 
   const [isGenerating, setIsGenerating] = useState(false)
-
-const callGenerateEndpoint = async () => {
-  setIsGenerating(true);
+  const [selectedFile, setSelectedFile] = useState(null);  // Add this line
+  const onFileSelected = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
   
-  console.log("Calling OpenAI...")
-  const response = await fetch('/api/generate', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ userInput }),
-  });
-
-  const data = await response.json();
-  const { output } = data;
-  console.log("OpenAI replied...", output.text)
-
-  setApiOutput(`${output.text}`);
-  setIsGenerating(false);
-}
-
-  const onUserChangedText = (event) => {
+  const callGenerateEndpoint = async () => {
+    setIsGenerating(true);
+    
+    let text = userInput;
+    if (selectedFile) {
+      const fileReader = new FileReader();
+      fileReader.readAsText(selectedFile);
+      await new Promise((resolve) => {
+        fileReader.onload = () => {
+          text = fileReader.result;
+          resolve();
+        };
+      });
+    }
+  
+    console.log("Calling OpenAI...")
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userInput: text }),
+    });
+  
+    const data = await response.json();
+    const { output } = data;
+    console.log("OpenAI replied...", output.text)
+  
+    setApiOutput(`${output.text}`);
+    setIsGenerating(false);
+  };
+    const onUserChangedText = (event) => {
     setUserInput(event.target.value);
   };
   
@@ -46,12 +61,13 @@ const callGenerateEndpoint = async () => {
           </div>
         </div>
         {<div className="prompt-container">
-  <textarea
-    placeholder="start typing here"
-    className="prompt-box"
-    value={userInput}
-    onChange={onUserChangedText}
-  />
+        <textarea
+placeholder="paste content or upload a file (.txt, .docx, .pdf)"
+className="prompt-box"
+  value={userInput}
+  onChange={onUserChangedText}                                   
+/>
+<input type="file" onChange={onFileSelected} />
   <div className="prompt-buttons">
   <a
     className={isGenerating ? 'generate-button loading' : 'generate-button'}
@@ -63,7 +79,7 @@ const callGenerateEndpoint = async () => {
   </a>
 </div>
 
-  {/* New code I added here */}
+  {}
   {apiOutput && (
   <div className="output">
     <div className="output-header-container">
