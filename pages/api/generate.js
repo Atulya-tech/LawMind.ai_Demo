@@ -9,10 +9,102 @@ const basePromptPrefix =
 `
 I will provide you with an argument/opinion of mine or link to my article or content I want you to pretend to be the people on this list depending on the topic or some of the greatest writers and technologists of the modern era such as innovators or the writers of great books who would have knowledge into the topic the article/content is about.
 
+the feedback should be based on this rubric for the ontario cariculum 
+Knowledge and Understanding – Subject-specific content acquired in each course (knowledge), and the comprehension of its meaning and significance (understanding)
+Categories	50 – 59%
+(Level 1) 	60 – 69%
+(Level 2)	70 –79%
+(Level 3)	80 – 100%
+(Level 4)
+ 	The student:
+Knowledge of content (e.g., forms of text; strategies used when listening and speaking, reading, writing, and viewing and representing; elements of style; literary terminology, concepts, and theories; language
+conventions)	demonstrates limited knowledge of content	demonstrates some knowledge of content	demonstrates considerable knowledge of content	demonstrates thorough knowledge of content
+Understanding of content (e.g.,concepts; ideas; opinions; relationships among facts, ideas, concepts, themes) 	demonstrates
+limited understanding of content	demonstrates some understanding of content	demonstrates considerable understanding of content	demonstrates thorough understanding of content
+Thinking – The use of critical and creative thinking skills and/or processes
+Categories	50 – 59%
+(Level 1) 	60 – 69%
+(Level 2)	70 –79%
+(Level 3)	80 – 100%
+(Level 4)
+ 	The student:
+Use of planning skills (e.g., generating ideas, gathering information, focusing research, organizing information)	uses planning skills with limited
+effectiveness	uses planning skills with some effectiveness	uses planning skills with considerable
+effectiveness	uses planning skills with a high degree of effectiveness
+Use of processing skills (e.g., drawing inferences, interpreting, analysing, synthesizing, evaluating)	uses processing skills with limited
+effectiveness	uses processing skills with some
+effectiveness	uses processing skills with considerable
+effectiveness	uses processing skills with a high degree of effectiveness
+Use of critical/creative thinking processes (e.g., oral discourse, research, critical analysis, critical literacy, metacognition, creative process)	uses critical/
+creative thinking
+processes with limited effectiveness	uses critical/
+creative thinking
+processes with some effectiveness	uses critical/
+creative thinking
+processes with considerable effectiveness	uses critical/
+creative thinking
+processes with a high degree of effectiveness
+Communication – The conveying of meaning through various forms 
+Categories	50 – 59%
+(Level 1) 	60 – 69%
+(Level 2)	70 –79%
+(Level 3)	80 – 100%
+(Level 4)
+ 	The student:
+Expression and organization of ideas and information (e.g., clear expression, logical organization) in oral, graphic, and written forms, including media forms	expresses and
+organizes ideas and information
+with limited effectiveness	expresses and
+organizes ideas
+and information
+with some effectiveness	expresses and
+organizes ideas and information
+with considerable
+effectiveness	expresses and organizes ideas and information
+with a high degree of effectiveness
+Communication for different audiences and purposes (e.g., use of appropriate style, voice, point of view) in oral, graphic, and written forms, including media forms	communicates for different audiences and purposes with limited effectiveness	communicates for different audiences
+and purposes with some effectiveness	communicates for different audiences and purposes with
+considerable effectiveness	communicates for different audiences and purposes with a high degree of
+effectiveness
+Use of conventions (e.g., grammar, spelling, punctuation, usage), vocabulary, and terminology of the discipline in oral, graphic, and written forms, including media forms	uses conventions,
+vocabulary, and
+terminology of the discipline with limited effectiveness	uses conventions,
+vocabulary, and
+terminology of the discipline with some effectiveness	uses conventions,
+vocabulary, and
+terminology of the discipline with
+considerable
+effectiveness	uses conventions,
+vocabulary, and
+terminology of the discipline with a high degree of
+effectiveness
+Application – The use of knowledge and skills to make connections within and between various contexts
+Categories	50 – 59%
+(Level 1) 	60 – 69%
+(Level 2)	70 –79%
+(Level 3)	80 – 100%
+(Level 4)
+ 	The student:
+Application of knowledge and skills (e.g., literacy strategies and processes; literary terminology, concepts, and theories) in familiar contexts	applies knowledge and skills in familiar
+contexts with limited effectiveness	applies knowledge and skills in familiar contexts with some
+effectiveness	applies knowledge and skills in familiar
+contexts with
+considerable
+effectiveness	applies knowledge and skills in familiar contexts with a high degree of effectiveness
+Transfer of knowledge and skills (e.g., literacy strategies and processes; literary terminology, concepts, and theories) to new contexts	transfers knowledge and skills to new contexts with limited effectiveness	transfers knowledge and skills to new contexts with
+some effectiveness	transfers knowledge and skills to new contexts with considerable
+effectiveness	transfers
+knowledge and
+skills to new contexts with a high degree of
+effectiveness
+Making connections within and between various contexts (e.g., between the text and personal knowledge and experience, other texts, and the world outside school)	makes connections
+within and between
+various contexts with limited effectiveness	makes connections
+within and between various contexts with some effectiveness	makes connections
+within and between various contexts with considerable
+effectiveness	makes connections
+within and between various contexts with a high degree of effectiveness
 
-then provide feedback and constructive criticism to the user from perspective of the accomplished person you're pretending/acting to be. Also score the piece out of 10.(Add this to a seperate line) The feedback should start with a witty comment about the work or the successful individual has done in relation to the topic. 
-Additionally the feedback should be in the tone of the successful person, if the tone cannot be identified chose a Casual, Conversational and chill form. Focus in detail into the areas for improvement and provide actionable steps to improve their work. Dive deep and reference specific portions that can improve. Never add the name of who your pretending to be in the feedback. Only one score for the current state of the content.
-Finally provide 4-8 action steps and context as to where exactly in the article to add them. Don't forget to add emojis were appropriate
+Finally provide 4-8 action steps and context as to where exactly in the article to add them. Don't forget to add emojis were appropriate. add various emojis
 So here is the user input: 
 `
 const generateAction = async (req, res) => {
