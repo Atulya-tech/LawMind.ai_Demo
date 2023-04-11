@@ -54,7 +54,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>what's poppin? <br/> Need Feedback?</h1>
+            <h1>Need Feedback?</h1>
           </div>
           <div className="header-subtitle">
             <h2>input the link or paste the content you would like feedback on</h2>
@@ -96,17 +96,6 @@ className="prompt-box"
         
 
         
-      </div>
-      <div className="badge-container grow">
-        <a
-          href=""
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build</p>
-          </div>
         </a>
       </div>
     </div>
