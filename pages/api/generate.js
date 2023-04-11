@@ -105,6 +105,7 @@ effectiveness	makes connections
 within and between various contexts with a high degree of effectiveness
 
 Finally provide 4-8 action steps and context as to where exactly in the article to add them. Don't forget to add emojis were appropriate. add various emojis
+be specific by using content from the text and suggesting fixes for the problem as an example
 So here is the user input: 
 `
 const generateAction = async (req, res) => {
