@@ -59,7 +59,7 @@ const Home = () => {
         </div>
         <div className="prompt-container">
           <textarea
-            placeholder="Paste content or link to content (Google Docs doesn't work :("
+            placeholder="Paste content or link to content Google Docs doesn't work :("
             className="prompt-box"
             value={userInput}
             onChange={onUserChangedText}
