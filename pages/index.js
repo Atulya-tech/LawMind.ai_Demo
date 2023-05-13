@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
+  const [userInput2, setUserInput2] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -13,7 +14,7 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     
-    let text = userInput;
+    let text = userInput + userInput2;
     if (selectedFile) {
       const fileReader = new FileReader();
       fileReader.readAsText(selectedFile);
@@ -45,24 +46,33 @@ const Home = () => {
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
   };
+  const onUserChangedText2 = (event) => {
+    setUserInput2(event.target.value);
+  };
 
   return (
     <div className="root">
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Need Feedback?</h1>
+            <h1>Verdict AI</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Input the link or paste the content you would like feedback on</h2>
+            <h2>Transforming the Legal Landscape : The AI-Powered Solution for Smarter, Faster, and More Accurate Legal Services</h2>
           </div>
         </div>
         <div className="prompt-container">
           <textarea
-            placeholder="Paste content or link to content Google Docs doesn't work :("
+            placeholder="Prosecution Arguments"
             className="prompt-box"
             value={userInput}
             onChange={onUserChangedText}
+          />
+          <textarea
+            placeholder="Defense Arguments"
+            className="prompt-box"
+            value={userInput2}
+            onChange={onUserChangedText2}
           />
           <div className="prompt-buttons">
             <a
